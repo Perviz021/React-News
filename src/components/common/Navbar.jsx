@@ -10,6 +10,7 @@ import { FaSuitcaseMedical } from "react-icons/fa6";
 import { TbMicroscope } from "react-icons/tb";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaEnvira } from "react-icons/fa";
+import classNames from "classnames";
 
 function Icon({ slug }) {
   const icons = {
@@ -32,7 +33,7 @@ function Navbar() {
   const [categories, fetchCategories, loading] = useFetchCategoryList();
 
   useEffect(() => {
-    fetchCategories({ demo: "test" });
+    fetchCategories();
   }, []); //component yuklenen kimi isleyir
 
   return (
@@ -41,7 +42,11 @@ function Navbar() {
         <a
           key={index}
           href="#"
-          className="flex items-center space-x-[22px] text-[16px] text-amberBlack"
+          className={classNames({
+            "flex items-center space-x-[22px] h-[50px] pl-[33px] text-[16px] text-amberBlack relative rounded-tr-full rounded-br-full": true,
+            "bg-[#e0f0f8] after:content-[''] after:bg-skyBlue after:absolute after:size-[6px] after:left-[15px] after:rounded-full text-skyBlue font-bold":
+              index === 0,
+          })}
         >
           <span className="text-[24px]">
             <Icon slug={category.slug} />
