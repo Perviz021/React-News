@@ -12,7 +12,7 @@ function Subscription({ className }) {
       </div>
       <div className="flex items-center justify-between">
         <span className="text-[30px]">
-          $8<small className="text-[15px]">/m</small>
+          $8<small className="text-[16px] font-light">/m</small>
         </span>
         <Button handleClick={(e) => console.log(e)} size="lg" rounded={true}>
           Upgrade

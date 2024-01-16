@@ -3,17 +3,17 @@ import { FiHome, FiInfo, FiPhone } from "react-icons/fi";
 export default [
   {
     name: "Home",
-    path: "",
+    path: "/",
     icon: <FiHome />,
   },
   {
     name: "About",
-    path: "",
+    path: "/about",
     icon: <FiInfo />,
   },
   {
     name: "Contact",
-    path: "",
+    path: "/contact",
     icon: <FiPhone />,
   },
 ];

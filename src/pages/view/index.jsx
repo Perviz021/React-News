@@ -1,5 +1,5 @@
 function ViewPage() {
-  return <div></div>;
+  return <div>View Page</div>;
 }
 
 export default ViewPage;

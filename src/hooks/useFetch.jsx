@@ -1,4 +1,9 @@
+import { serviceAuthorFetchList } from "@/services/author.service";
 import { serviceCategoryFetchList } from "@/services/category.service";
+import {
+  serviceNewsFetchList,
+  serviceNewsFetchRandomList,
+} from "@/services/news.service";
 
 import { useState } from "react";
 
@@ -25,4 +30,37 @@ export const useFetchCategoryList = () => {
   };
 
   return [data, apiFetch, loading];
+};
+
+// Fetch Random News
+export const useFetchNewsRandomList = () => {
+  const [data, fetch, loading] = useFetch([]);
+
+  const apiFetch = async () => {
+    fetch(serviceNewsFetchRandomList, { limit: 6 });
+  };
+
+  return [data?.data || [], apiFetch, loading];
+};
+
+// Fetch News
+export const useFetchNewsList = () => {
+  const [data, fetch, loading] = useFetch([]);
+
+  const apiFetch = async () => {
+    fetch(serviceNewsFetchList, { limit: 6 });
+  };
+
+  return [data?.data || [], apiFetch, loading];
+};
+
+// Fetch Authors
+export const useFetchAuthorRandomList = () => {
+  const [data, fetch, loading] = useFetch([]);
+
+  const apiFetch = async () => {
+    fetch(serviceAuthorFetchList, { random: true, limit: 5 });
+  };
+
+  return [data?.data || [], apiFetch, loading];
 };

@@ -1,6 +1,7 @@
 import { FiLogOut, FiSearch, FiUser } from "react-icons/fi";
 import Dropdown from "../ui/dropdown";
 import menus from "@/routers/menus";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const profileMenus = [
@@ -26,10 +27,14 @@ function Header() {
         </div>
         <div className="flex items-center">
           {menus.map((menu, index) => (
-            <a href="#" key={index} className="flex items-center p-3 space-x-2">
+            <NavLink
+              to={menu.path}
+              key={index}
+              className="flex items-center p-3 space-x-2"
+            >
               {menu.icon && <span>{menu.icon}</span>}
               <span>{menu.name}</span>
-            </a>
+            </NavLink>
           ))}
         </div>
       </div>
