@@ -1,3 +1,4 @@
+import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import Logo from "@/components/common/Logo";
 import Navbar from "@/components/common/Navbar";
@@ -15,7 +16,11 @@ function AppLayout({ children }) {
       <div className="flex-1">
         <Header />
         <div className="flex gap-x-[45px]">
-          <div className="flex-1">{children}</div>
+          <div className="flex-1">
+            {children}
+
+            <Footer />
+          </div>
           <div className="w-[285px] shrink-0">
             <RightAside />
           </div>
