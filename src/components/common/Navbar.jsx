@@ -11,7 +11,8 @@ import { TbMicroscope } from "react-icons/tb";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaEnvira } from "react-icons/fa";
 import classNames from "classnames";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+import { route } from "@/utils/helper";
 
 function Icon({ slug }) {
   const icons = {
@@ -33,6 +34,8 @@ function Icon({ slug }) {
 function Navbar() {
   const [categories, fetchCategories, loading] = useFetchCategoryList();
 
+  const { slug } = useParams();
+
   useEffect(() => {
     fetchCategories();
   }, []); //component yuklenen kimi isleyir
@@ -42,11 +45,11 @@ function Navbar() {
       {categories.map((category, index) => (
         <NavLink
           key={index}
-          to={`/search/${category.slug}`}
+          to={route("search", { slug: category.slug })}
           className={classNames({
             "flex items-center space-x-[22px] h-[50px] pl-[33px] text-[16px] text-amberBlack relative rounded-tr-full rounded-br-full": true,
             "bg-[#e0f0f8] after:content-[''] after:bg-skyBlue after:absolute after:size-[6px] after:left-[15px] after:rounded-full text-skyBlue font-bold":
-              index === 0,
+              slug === category.slug,
           })}
         >
           <span className="text-[24px]">

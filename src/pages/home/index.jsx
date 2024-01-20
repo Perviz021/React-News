@@ -4,8 +4,9 @@ import {
   useFetchNewsRandomList,
 } from "@/hooks/useFetch";
 import { useEffect } from "react";
-import NewsSection from "./components/NewsSection";
-import AuthorSection from "./components/AuthorSection";
+import NewsSection from "@/components/widgets/news/NewsSection";
+import AuthorSection from "@/components/widgets/author/AuthorSection";
+import { Helmet } from "react-helmet";
 
 function HomePage() {
   const [randomNews, fetchRandomNews, randomLoading] = useFetchNewsRandomList();
@@ -14,12 +15,15 @@ function HomePage() {
 
   useEffect(() => {
     fetchRandomNews();
-    fetchNews();
+    fetchNews({ limit: 6 });
     fetchAuthors();
   }, []);
 
   return (
     <>
+      <Helmet>
+        <title>Aster News</title>
+      </Helmet>
       <NewsSection
         items={randomNews}
         loading={randomLoading}

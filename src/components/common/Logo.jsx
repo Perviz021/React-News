@@ -1,4 +1,3 @@
-import logo from "@/assets/img/logo.svg";
 import { NavLink } from "react-router-dom";
 
 function Logo() {
@@ -8,7 +7,7 @@ function Logo() {
         to={"/"}
         className="flex items-center pl-[31px] space-x-[15px] py-[28px]"
       >
-        <img src={logo} alt="logo" />
+        <img src="/logo.svg" alt="logo" />
         <span className="text-primary font-bold text-[18px]">Aster News</span>
       </NavLink>
     </div>

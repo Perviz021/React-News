@@ -3,7 +3,15 @@ import routers from "@/routers/routers";
 import { useRoutes } from "react-router-dom";
 
 const GlobalProvider = () => {
-  const RouterComponent = () => useRoutes(routers);
+  const routersArr = routers.map((router) => {
+    if (router.layout === "AppLayout") {
+      router.element = <AppLayout>{router.element}</AppLayout>;
+      return router;
+    }
+  });
+
+  const RouterComponent = () => useRoutes(routersArr);
+
   return (
     <>
       <RouterComponent />
