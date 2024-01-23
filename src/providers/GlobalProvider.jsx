@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import AppLayout from "@/layouts/AppLayout";
 import routers from "@/routers/routers";
 import { useRoutes } from "react-router-dom";
@@ -14,6 +15,7 @@ const GlobalProvider = () => {
 
   return (
     <>
+      <ScrollToTop />
       <RouterComponent />
     </>
   );
