@@ -1,5 +1,5 @@
 function RightAside() {
-  return <div></div>;
+  return <div className="2x:fixed">Right Side</div>;
 }
 
 export default RightAside;

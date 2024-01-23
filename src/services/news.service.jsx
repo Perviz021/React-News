@@ -18,3 +18,9 @@ export const serviceNewsFetchBySlug = async (slug) => {
   const res = await get(NewsApi.showBySlug.replace(":slug", slug));
   return res;
 };
+
+// Fetch Comments
+export const serviceNewsFetchComments = async (id) => {
+  const res = await get(NewsApi.comments.replace(":id", id));
+  return res;
+};

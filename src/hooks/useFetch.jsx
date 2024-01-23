@@ -2,6 +2,7 @@ import { serviceAuthorFetchList } from "@/services/author.service";
 import { serviceCategoryFetchList } from "@/services/category.service";
 import {
   serviceNewsFetchBySlug,
+  serviceNewsFetchComments,
   serviceNewsFetchList,
   serviceNewsFetchRandomList,
 } from "@/services/news.service";
@@ -86,4 +87,15 @@ export const useFetchNewsBySlug = () => {
   };
 
   return [data || false, apiFetch, loading];
+};
+
+// Fetch News By Comments
+export const useFetchNewsComments = () => {
+  const [data, fetch, loading] = useFetch([]);
+
+  const apiFetch = async (id) => {
+    fetch(serviceNewsFetchComments, id);
+  };
+
+  return [data || [], apiFetch, loading];
 };

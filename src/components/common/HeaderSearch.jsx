@@ -45,7 +45,7 @@ function HeaderSearch() {
 
   return (
     <div className="relative" ref={ref}>
-      <div className="flex items-center bg-[#ECF5F8] w-[495px] h-[46px] rounded-theme">
+      <div className="flex items-center bg-[#ECF5F8] w-[495px] 2xl:w-[350px] h-[46px] rounded-theme">
         <input
           value={text}
           onChange={(e) => setText(e.target.value)}

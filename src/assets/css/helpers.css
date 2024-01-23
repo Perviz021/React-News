@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-flex items-center justify-center px-[25px];
+  @apply inline-flex items-center justify-center px-[25px] shrink-0;
 }
 
 .btn--sm {

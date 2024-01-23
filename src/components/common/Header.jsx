@@ -14,7 +14,7 @@ function Header() {
     console.log(i);
   };
   return (
-    <div className="pt-[15px] pb-[40px] flex justify-between items-center">
+    <div className="pt-[15px] pb-[40px] 2xl:pb-[15px] 2xl:fixed bg-[#F4F9F8] 2x:z-50 flex justify-between items-center">
       <div className="flex items-center space-x-6">
         <HeaderSearch />
         <div className="flex items-center">
