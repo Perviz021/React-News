@@ -6,11 +6,11 @@ function Button({
   rounded = false,
   size = "md",
   block = false,
-  handleClick,
+  onClick,
 }) {
   return (
     <button
-      onClick={(e) => handleClick(e)}
+      onClick={(e) => onClick(e)}
       className={classNames([
         "btn",
         property ? `btn--${property}` : "",

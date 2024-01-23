@@ -53,7 +53,7 @@ export const useFetchNewsList = () => {
     fetch(serviceNewsFetchList, params);
   };
 
-  return [data?.data || [], apiFetch, loading];
+  return [data?.data || [], apiFetch, loading, data?.total];
 };
 
 // Fetch Authors
