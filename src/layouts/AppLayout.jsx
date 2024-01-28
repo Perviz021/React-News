@@ -23,7 +23,7 @@ function AppLayout({ children }) {
 
             <Footer />
           </div>
-          <div className="w-[285px] shrink-0 2xl:fixed">
+          <div className="w-[285px] shrink-0 2xl:fixed mr-[30px]">
             <RightAside />
           </div>
         </div>
